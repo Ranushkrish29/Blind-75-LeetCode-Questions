@@ -159,7 +159,7 @@ positionValuePreAndSuff{ i : [left, right] } // dict to store the prefix and suf
 
 
 //solution 2 (with out the hashmap )  same method but simplefied updated version //
-class Solution1 {
+class Solution2 {
     public int[] productExceptSelf(int[] nums) {
         //result nums store
         int[] resultnums = new int[nums.length];
@@ -183,3 +183,33 @@ class Solution1 {
         return resultnums;
     }
 }
+
+
+//solution 2 prefix and suffix
+class Solution3 {
+   public int[] productExceptSelf(int[] nums) {
+        if (nums == null || nums.length == 0)
+            return null;
+
+        int n = nums.length;
+        int[] ans = new int[n];
+        int product = 1;
+
+        // prefix
+        for (int i = 0; i < n; i++) {
+            ans[i] = product;
+            product *= nums[i];
+        }
+
+        product = 1;
+
+        // suffix
+        for (int i = n - 1; i >= 0; i--) {
+            ans[i] = product * ans[i];
+            product *= nums[i]; 
+        }
+
+        return ans;
+    }
+}
+
