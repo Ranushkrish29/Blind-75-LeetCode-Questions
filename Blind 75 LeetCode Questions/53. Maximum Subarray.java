@@ -46,8 +46,8 @@ class Solution {
 //solution 1 - Works but Time Limit Exceeded :)
 class Solution {
     public int maxSubArray(int[] nums) {
-        int maxSum = nums[0],
-        currSum = 0;
+        int maxSum = nums[0], // inti max value
+        currSum = 0; //store the current max sum
         for(int i =0 ; i<nums.length;i++){
             if (currSum < 0)
                 currSum = 0;
@@ -61,7 +61,13 @@ class Solution {
 //explaination
 // [-2,1,-3,4,-1,2,1,-5,4]
 
-
+    maxsum = -2 
+    //loop the arr 
+        //steps
+        currSum = 0 // currsum < 0  : currsum = 0 ? currsum = currsum -> 0 = 0 so currsum = 0
+        currSum = currsum -2 // 0 - 2 = -2
+        maxSum = 0 // maxsum > currsum : maxsum = currsum ? maxsum = maxsum ->  -1 < 0 so maxsum = 0
+    
 
 
  
